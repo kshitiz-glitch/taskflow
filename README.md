@@ -401,58 +401,6 @@ The frontend uses a single build-time variable:
 
 In development, Vite proxies `/api` → `http://localhost:5000` via `vite.config.js`.
 
----
-
-## Deployment (Railway)
-
-This project is configured for zero-config Railway deployment via `nixpacks.toml`.
-
-### Steps
-
-**1. Push to GitHub**
-```bash
-git remote add origin https://github.com/YOUR_USERNAME/taskflow.git
-git branch -M main
-git push -u origin main
-```
-
-**2. Create Railway project**
-- Go to [railway.app](https://railway.app) → **New Project**
-- Select **Deploy from GitHub repo** → choose `taskflow`
-
-**3. Add PostgreSQL database**
-- In your Railway project → **New** → **Database** → **Add PostgreSQL**
-- Railway automatically injects `DATABASE_URL` into your service
-
-**4. Set environment variables**
-
-In your Railway service → **Variables** tab:
-
-```
-JWT_SECRET=<generate with: openssl rand -hex 32>
-NODE_ENV=production
-```
-
-`PORT` and `DATABASE_URL` are set automatically by Railway.
-
-**5. Deploy**
-
-Railway triggers a build automatically on push. The build sequence is:
-
-```
-[install]  npm install --prefix backend
-           npm install --prefix frontend
-[build]    npm run build --prefix frontend
-           cd backend && npx prisma generate
-[start]    cd backend && npx prisma db push && node src/index.js
-```
-
-**6. Verify**
-
-Visit `https://YOUR_APP.up.railway.app/api/health` — you should see:
-```json
-{ "success": true, "message": "TaskFlow API is running" }
-```
 
 ---
 
