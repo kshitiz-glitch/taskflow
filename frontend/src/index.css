@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+  }
+
+  ::selection {
+    background: rgba(99, 102, 241, 0.3);
+    color: #f1f5f9;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-surface-800/60 backdrop-blur-xl border border-surface-700/50;
+  }
+
+  .glass-card {
+    @apply bg-surface-800/80 backdrop-blur-xl border border-surface-700/60 rounded-xl shadow-card;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-400 to-violet-400 bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400
+           text-white font-semibold px-4 py-2.5 rounded-lg transition-all duration-200
+           shadow-md hover:shadow-glow active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-surface-700 hover:bg-surface-600 text-surface-100 font-medium px-4 py-2.5
+           rounded-lg transition-all duration-200 active:scale-[0.98]
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply hover:bg-surface-700/60 text-surface-300 hover:text-surface-100 font-medium px-3 py-2
+           rounded-lg transition-all duration-200 active:scale-[0.98];
+  }
+
+  .btn-danger {
+    @apply bg-red-500/10 hover:bg-red-500/20 text-red-400 hover:text-red-300 font-medium px-4 py-2.5
+           rounded-lg border border-red-500/20 transition-all duration-200 active:scale-[0.98];
+  }
+
+  .input-base {
+    @apply w-full bg-surface-900/80 border border-surface-700 text-surface-100 placeholder-surface-500
+           rounded-lg px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/50
+           focus:border-brand-500/50 transition-all duration-200;
+  }
+
+  .label-base {
+    @apply block text-sm font-medium text-surface-300 mb-1.5;
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold text-surface-50 tracking-tight;
+  }
+
+  .card {
+    @apply glass-card p-5 hover:border-surface-600/60 transition-all duration-200;
+  }
+
+  .shimmer-base {
+    background: linear-gradient(
+      90deg,
+      #1e293b 25%,
+      #2d3f55 50%,
+      #1e293b 75%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .drag-handle {
+    cursor: grab;
+  }
+  .drag-handle:active {
+    cursor: grabbing;
+  }
+}

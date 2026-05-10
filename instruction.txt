@@ -1,0 +1,70 @@
+Assignment: Team Task Manager (Full-Stack)
+Build a web app where users can create projects, assign tasks, and track progress with role-based access (Admin/Member).
+
+🚀 Key Features
+Authentication (Signup/Login)
+Project & team management
+Task creation, assignment & status tracking
+Dashboard (tasks, status, overdue)
+⚙️ Requirements
+REST APIs + Database (SQL/NoSQL)
+Proper validations & relationships
+Role-based access control
+🌐 Deployment (Mandatory)
+Deploy using Railway
+(App must be live and fully functional for selection)
+
+Guidelines for Full-Stack Application Assessment
+
+Frontend Evaluation (/10):
+
+
+Authentication & User Flow (2)
+
+
+Project & Task Management UI (2)
+
+
+Dashboard & Data Presentation (2)
+
+
+Validations, Error & Loading States (2)
+
+
+Code Quality & Responsiveness (2)
+
+Backend Evaluation (/10):
+
+
+REST API Design & Coverage (2)
+
+
+Authentication & Security (2)
+
+
+Role-Based Access Control (2)
+
+
+Database Design & Relationships (2)
+
+
+Validation, Error Handling & Business Logic (2)
+
+Visual Quality (/10):
+
+
+Overall Professional Look (2)
+
+
+Layout, Spacing & Alignment (2)
+
+
+Typography & Readability (2)
+
+
+Color, Status Indicators & Consistency (2)
+
+
+Polish, Empty/Loading States & Mobile Experience (2)
+
+Students are expected to ensure that their application demonstrates strong technical implementation, clean code practices, and a polished user experience across devices.
