@@ -7,3 +7,4 @@ dist/
 npm-debug.log*
 backend/prisma/migrations/
 frontend/dist/
+instruction.txt
