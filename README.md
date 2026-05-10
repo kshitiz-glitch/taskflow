@@ -475,6 +475,3 @@ taskflow/
 
 ---
 
-## License
-
-MIT © 2025
